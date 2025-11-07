@@ -1,0 +1,412 @@
+/*----------------------------------Importación de fuentes desde Google Fonts----------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Viaoda+Libre&display=swap');
+
+/*---------------------------MENÚ PRINCIPAL---------------------------*/
+.menucompleto{
+  background-color: rgb(29, 29, 29); /* Color de fondo gris oscuro */
+  display: flex; /* Usa flexbox para distribuir elementos */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 2; /* Se coloca sobre otros elementos */
+  position: fixed; /* Permanece fijo al hacer scroll */
+}
+
+/* Submenú 1 (zona izquierda del menú) */
+#submenu1{
+  background-color: rgb(29, 29, 29); /* Mismo color del menú */
+  display: flex; /* Flexbox activo */
+  width: 50%; /* Ocupa la mitad izquierda */
+  height: 10px; /* Altura de 10px */
+}
+
+/* Menú del centro (zona media del encabezado) */
+#menucentro{
+  background-color: rgb(29, 29, 29); /* Fondo gris oscuro */
+  width: 20%; /* Ocupa el 20% del ancho total */
+  height: 30px; /* Altura de 30px */
+}
+
+/* Submenú 2 (zona derecha del menú) */
+#submenu2{
+  background-color: rgb(29, 29, 29); /* Mismo color */
+  display:flex; /* Usa flexbox */
+  width: 50%; /* Ocupa mitad derecha */
+  height: 30px; /* Altura de 30px */
+}
+
+/*---------------------------BOTONES DEL MENÚ---------------------------*/
+
+/* Contenedor de botones alineados a la izquierda */
+.prueba1{ 
+  width:100%; /* Ocupa todo el ancho disponible */
+  display: flex; /* Usa flexbox */
+  justify-content: flex-start; /* Alinea los elementos al inicio */
+}
+
+/* Contenedor de botones alineados a la derecha */
+.prueba2{
+  width: 100%; /* Ocupa todo el ancho disponible */
+  display: flex; /* Usa flexbox */
+  justify-content: flex-end; /* Alinea los elementos al final */
+}
+
+/* Estilos generales para los botones */
+.botones{
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius:5px; /* Bordes redondeados */
+  padding:10px 30px; /* Espaciado interno */
+  width: 75%; /* Ancho relativo al contenedor */
+  height: 25px; /* Altura fija */
+  display: flex; /* Activa flexbox */
+  border-style: none; /* Sin borde visible */
+  border-color: black; /* Define color del borde (no visible) */
+  list-style-type:none; /* Quita viñetas si son listas */
+  text-align: center; /* Centra el texto */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  align-items: center; /* Centra verticalmente el contenido */
+  margin-right: 20px; /* Espacio a la derecha */
+  font-family: "DM Serif Text", serif; /* Aplica la fuente */
+}
+
+/* Efecto al pasar el ratón sobre un elemento con clase colegio */
+.colegio :hover{
+  scale: 1.1; /* Aumenta ligeramente el tamaño */
+}
+
+/* Estilo general de enlaces */
+a{
+  text-decoration: none; /* Quita el subrayado */
+  color: rgb(0, 0, 0); /* Color negro del texto */
+}
+
+/* Efecto hover en los botones */
+.botones:hover{
+  box-shadow: 4px 4px 5px; /* Sombra ligera */
+  color: rgb(0, 0, 0); /* Texto negro */
+  background-color: rgb(243, 243, 243); /* Fondo más claro */
+  scale: 1.1; /* Aumenta tamaño al pasar el cursor */
+}
+
+/*------------------------SLIDER DE IMÁGENES--------------------------*/
+
+/* Reglas globales */
+* {box-sizing: border-box} /* Incluye padding y border en el tamaño total */
+body {font-family: Verdana, sans-serif; margin:0} /* Fuente general y sin márgenes */
+.mySlides {display: none} /* Oculta las diapositivas por defecto */
+img {vertical-align: middle;} /* Centra verticalmente las imágenes */
+
+/* Contenedor principal del slideshow */
+.slideshow-container {
+  max-width: 2000; /* Máximo ancho (sin px) */
+  position: relative; /* Posicionamiento relativo */
+  margin: auto; /* Centra el contenedor */
+}
+
+/* Botones de navegación (anterior y siguiente) */
+.prev, .next {
+  cursor: pointer; /* Cambia el cursor a mano */
+  position: absolute; /* Posición absoluta dentro del contenedor */
+  top: 50%; /* Centrado vertical */
+  width: auto; /* Ancho automático */
+  padding: 16px; /* Relleno interno */
+  margin-top: -22px; /* Ajuste vertical */
+  color: #ffffff; /* Texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 18px; /* Tamaño del texto */
+  transition: 0.6s ease; /* Transición suave */
+  border-radius: 0 3px 3px 0; /* Bordes redondeados solo en un lado */
+  user-select: none; /* Evita selección de texto */
+}
+
+/* Posición del botón "siguiente" */
+.next {
+  right: 0; /* Alineado a la derecha */
+  border-radius: 3px 0 0 3px; /* Bordes opuestos redondeados */
+}
+
+/* Efecto hover en los botones de navegación */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8); /* Fondo semitransparente oscuro */
+}
+
+/* Texto de descripción en cada imagen */
+.text {
+  color: #f2f2f2; /* Texto gris claro */
+  font-size: 15px; /* Tamaño de fuente */
+  padding: 8px 12px; /* Espaciado interno */
+  position: absolute; /* Posicionamiento dentro del contenedor */
+  bottom: 8px; /* Alineado abajo */
+  width: 100%; /* Ocupa todo el ancho */
+  text-align: center; /* Centra el texto */
+}
+
+/* Texto que indica el número de imagen (1/3, 2/3, etc.) */
+.numbertext {
+  color: #f2f2f2; /* Texto gris claro */
+  font-size: 12px; /* Tamaño pequeño */
+  padding: 8px 12px; /* Espaciado */
+  position: absolute; /* Posición dentro de la imagen */
+  top: 0; /* Alineado arriba */
+}
+
+/* Puntos indicadores (debajo del slider) */
+.dot {
+  cursor: pointer; /* Cursor de mano */
+  height: 15px; /* Tamaño vertical */
+  width: 15px; /* Tamaño horizontal */
+  margin: 0 2px; /* Espaciado lateral */
+  background-color: #bbb; /* Color gris claro */
+  border-radius: 50%; /* Forma circular */
+  display: inline-block; /* En línea */
+  transition: background-color 0.6s ease; /* Cambio de color suave */
+}
+
+/* Estado activo o hover del punto */
+.active, .dot:hover {
+  background-color: #717171; /* Cambia a gris más oscuro */
+}
+
+/* Animación de transición entre imágenes */
+.fade {
+  animation-name: fade; /* Usa animación definida abajo */
+  animation-duration: 1.5s; /* Duración 1.5 segundos */
+}
+
+/* Definición de animación de desvanecimiento */
+@keyframes fade {
+  from {opacity: .4} /* Comienza con opacidad baja */
+  to {opacity: 1} /* Termina completamente visible */
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px} /* Reduce tamaño de texto */
+}
+
+/*------------------------------CONTENIDO PRINCIPAL------------------------------*/
+.Contenido{ /*Contenedor principal de cada sección del contenido*/
+  background-color: rgb(29, 29, 29); /*Fondo oscuro del sitio*/
+  width: 100%; /*Ocupa todo el ancho disponible*/
+  min-height: 700px; /*Permite que crezca según el contenido, evita solapamiento*/
+  display: flex; /*Activa el sistema de cajas flexibles*/
+  flex-wrap: wrap; /*Permite que los elementos se ajusten en varias líneas*/
+  font-family: "DM Serif Text", serif; /*Tipografía principal*/
+  font-weight: 400; /*Peso de la fuente*/
+  font-style: normal; /*Estilo normal de la fuente*/
+  margin: auto; /*Centra horizontalmente*/
+  padding: 40px 0; /*Espaciado arriba y abajo para separar secciones*/
+ }
+/* Columna izquierda */
+.Izquierda{
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 2%; /* Bordes suaves */
+  margin: auto; /* Centrado */
+  justify-content: center; /* Centrado interno */
+  text-align: center; /* Texto centrado */
+  width: 40%; /* Ocupa 40% del ancho */
+  height: 300px; /* Alto fijo */
+  padding-left: 25px; /* Espaciado interno izquierdo */
+  padding-right: 25px; /* Espaciado interno derecho */
+}
+
+/* Variante de columna izquierda más alta */
+.Izquierda2{
+  background-color: #ffffff;
+  border-radius: 2%;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  width: 40%;
+  height: 400px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* Columna derecha */
+.Derecha2{
+  background-color: #ebebeb; /* Fondo gris claro */
+  border-radius: 2%;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  width: 40%;
+  height: 300px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* Variante de columna derecha más alta */
+.Derecha3{
+  background-color: #ebebeb;
+  border-radius: 2%;
+  margin: auto;
+  justify-content: center;
+  text-align: center;
+  width: 40%;
+  height: 350px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/*---------------ANIMACIÓN DE IMÁGENES (HOVER)-----------------*/
+.container {
+  background-color: rgb(255, 255, 255); /* Fondo blanco */
+  display: flex; /* Usa flexbox */
+  margin: auto; /* Centra el contenedor */
+  width: 40%; /* Ancho del contenedor */
+  height: 450px; /* Altura fija */
+  position: relative; /* Necesario para posicionar .middle */
+  width: 50%; /* Se sobrescribe, ocupa 50% */
+}
+
+.image {
+  opacity: 1; /* Imagen visible */
+  display: block; /* Muestra como bloque */
+  width: 100%; /* Ancho completo */
+  height: auto; /* Altura proporcional */
+  transition: .5s ease; /* Transición suave */
+  backface-visibility: hidden; /* Oculta reverso en animaciones */
+}
+
+.middle {
+  transition: .5s ease; /* Transición suave */
+  opacity: 0; /* Invisible por defecto */
+  position: absolute; /* Centrado dentro del contenedor */
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado absoluto */
+  -ms-transform: translate(-50%, -50%); /* Compatibilidad IE */
+  text-align: center; /* Centra texto */
+}
+
+.container:hover .image {
+  opacity: 0.3; /* Imagen se vuelve translúcida */
+}
+
+.container:hover .middle {
+  opacity: 1; /* Texto aparece */
+}
+
+.text1 {
+  background-color: #525755; /* Fondo gris oscuro */
+  color: white; /* Texto blanco */
+  font-size: 16px; /* Tamaño del texto */
+  padding: 16px 32px; /* Espaciado interno */
+}
+
+/*--------------------APARTADO DE INTEGRANTES--------------------------*/
+html{
+  box-sizing: border-box; /* Incluye bordes y rellenos en el tamaño total */
+}
+
+.columnaintegrantes {
+  width: 25%; /* Ocupa un cuarto del ancho */
+  margin-bottom: 16px; /* Espacio inferior */
+  margin: auto; /* Centrado */
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%; /* Ocupa todo el ancho */
+    display: block; /* Coloca los elementos en columna */
+  }
+}
+
+.card {
+  background-color: #ebebeb; /* Fondo gris claro */
+  border-style: groove; /* Borde en relieve */
+}
+
+.containerintegrantes {
+  padding: 0 16px; /* Relleno lateral */
+}
+
+.container::after, .row::after {
+  content: ""; /* Elemento vacío */
+  clear: both; /* Limpia flotados */
+  display: table; /* Asegura altura correcta */
+}
+
+.title {
+  color: rgb(7, 7, 7); /* Texto casi negro */
+}
+
+.button {
+  border: none; /* Sin borde */
+  outline: 0; /* Sin contorno */
+  display: inline-block; /* Bloque en línea */
+  padding: 8px; /* Espaciado interno */
+  color: white; /* Texto blanco */
+  background-color: #000000; /* Fondo negro */
+  text-align: center; /* Texto centrado */
+  text-decoration: double; /* Doble subrayado */
+  cursor: pointer; /* Cursor de mano */
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+.button:hover {
+  background-color: #555; /* Fondo gris más claro al pasar el cursor */
+}
+
+.row{
+  margin: auto; /* Centra la fila */
+  display: flex; /* Distribuye columnas en fila */
+}
+
+/*------------------BOTÓN "IR ARRIBA"-----------------------*/
+#myBtn {
+  font-family: "DM Serif Text", serif; /* Fuente del botón */
+  position: fixed; /* Fijo en pantalla */
+  bottom: 20px; /* 20px desde abajo */
+  right: 30px; /* 30px desde la derecha */
+  z-index: 99; /* Encima de otros elementos */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno */
+  background-color: rgb(255, 255, 255); /* Fondo blanco */
+  color: rgb(0, 0, 0); /* Texto negro */
+  cursor: pointer; /* Cursor de mano */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: 18px; /* Tamaño del texto */
+}
+
+/* Efecto hover del botón "ir arriba" */
+#myBtn:hover {
+  box-shadow: 4px 4px 5px; /* Sombra */
+  color: rgb(0, 0, 0); /* Texto negro */
+  background-color: rgb(243, 243, 243); /* Fondo más claro */
+  scale: 1.1; /* Aumenta ligeramente */
+}
+
+/*---------------------------PIE DE PÁGINA---------------------------*/
+footer {
+  background-color: #111; /*Color de fondo oscuro*/
+  color: white; /*Texto claro*/
+  text-align: center; /*Centrado del texto*/
+  padding: 20px; /*Espacio interno*/
+  width: 100%; /*Ocupa todo el ancho*/
+  font-family: "DM Serif Text", serif; /*Misma tipografía*/
+  font-size: 16px; /*Tamaño legible*/
+  border-top: 2px solid #444; /*Separador superior sutil*/
+}
+
+/*---------------------------IMÁGENES VARIAS---------------------------*/
+.imagenes{
+  display: flex; /* Muestra las imágenes en línea */
+  justify-content:space-evenly; /* Espacio igual entre ellas */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
